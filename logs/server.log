@@ -1,0 +1,8 @@
+2024-11-28 20:21:52 INFO  [Thread-0] org.example.Main$ClientHandler - User 'Ars' joined the chat.
+2024-11-28 20:22:20 INFO  [Thread-0] org.example.Main$ClientHandler - Received message from 'Ars': LIST:
+2024-11-28 20:22:20 INFO  [Thread-0] org.example.Main$ClientHandler - User 'Ars' requested the user list.
+2024-11-28 20:25:32 INFO  [Thread-0] org.example.Main$ClientHandler - User 'Ars' joined the chat.
+2024-11-28 20:26:19 INFO  [Thread-0] org.example.Main$ClientHandler - Received message from 'Ars': BROADCAST:g
+2024-11-28 20:26:19 INFO  [Thread-0] org.example.Main$ClientHandler - Broadcast message from 'Ars': g
+2024-11-28 20:26:33 INFO  [Thread-0] org.example.Main$ClientHandler - Received message from 'Ars': LIST:
+2024-11-28 20:26:33 INFO  [Thread-0] org.example.Main$ClientHandler - Sent user list to 'Ars': Ars
