@@ -10,7 +10,6 @@ public class Main {
     private static final Map<String, ClientHandler> clients = new HashMap<>();
 
     public static void main(String[] args) throws IOException {
-        // Загружаем конфигурацию из файла config.properties
         Properties properties = new Properties();
         InputStream input = Main.class.getClassLoader().getResourceAsStream("config.properties");
         if (input == null) {
@@ -49,12 +48,10 @@ public class Main {
                 in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                 out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
 
-                // Запрашиваем никнейм
                 out.write("Enter your nickname: ");
                 out.flush();
                 nickname = in.readLine();
 
-                // Проверка и регистрация никнейма
                 synchronized (clients) {
                     if (nickname == null || nickname.trim().isEmpty() || clients.containsKey(nickname)) {
                         out.write("Nickname is invalid or already taken. Try again.\n");
@@ -67,7 +64,6 @@ public class Main {
                 logger.info("User '{}' joined the chat.", nickname);
                 sendBroadcast("Server", nickname + " joined the chat.");
 
-                // Обработка сообщений
                 String message;
                 while ((message = in.readLine()) != null) {
                     logger.info("Received message from '{}': {}", nickname, message);
